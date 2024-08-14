@@ -1,0 +1,30 @@
+@use './responsive.scss' as media;
+@import './variables.scss';
+
+.stil-desc{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.stil-desc-wr{
+    padding-block-start: 50px;
+    padding-block-end: 20px;
+    padding-inline: 100px;
+    font-family: $primaryFont;
+    color: $textWhite;
+    max-width: 280px;
+    @include media.tablet{
+        padding-inline: 25px;
+    }
+    h2{
+        font-size: 28px;
+        margin-bottom: 10px;
+        display: flex;
+        line-height: 0.9;
+        align-items: center;
+    }
+    span{
+        font-weight: 100;
+        line-height: 1.4;
+    }
+}

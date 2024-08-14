@@ -1,0 +1,287 @@
+@import './variables.scss';
+
+.set-name-container{
+  &:nth-child(1){
+    transform: translateY(-70%);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 50px;
+    gap: 10px;
+    font-family: $primaryFont;
+    input{
+      padding: 5px;
+    }
+    button{
+      width: 200px;
+      background-color: orange;
+      cursor: pointer;
+      margin-top: 10px;
+      border: 2px solid;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.modif-inp{
+  position: absolute;
+}
+
+.appcarusel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .meal-plan-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+  
+    .cards-container-wrapper {
+      padding: 10% 0;
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+    }
+  
+    .cards-container {
+      display: flex;
+      position: relative;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 1rem 0;
+      box-sizing: border-box;
+      max-width: 100%;
+      justify-content: center;
+      overflow-x: auto;
+      overflow: visible; // Allow overflow
+      padding-left: calc(50% - 110px); /* Adjust for half the width of an active card */
+      padding-right: calc(50% - 110px); /* Adjust for half the width of an active card */
+      &.offset-right {
+        transform: translateX(15%);
+      }
+      &.offset-left {
+        transform: translateX(-15%);
+      }
+      
+  
+      .card {
+        scroll-snap-align: center;
+        flex: 0 0 auto;
+        min-width: 200px; /* Smaller width for non-active cards */
+        min-height: 450px;
+        margin: 0 1rem;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, width 0.3s ease, opacity 0.3s ease;
+        position: relative;
+        box-sizing: border-box;
+        opacity: 0.5; /* Make side cards less opaque */
+  
+        &.active {
+          transform: scale(1.2);
+          min-width: 230px; /* Larger width for the active card */
+          opacity: 1; /* Full opacity for active card */
+          z-index: 2;
+        }
+  
+        .remove-button {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: #f00;
+        }
+  
+        h2 {
+          margin-bottom: 1rem;
+        }
+  
+      }
+}
+  
+    .save-button {
+      max-width: 200px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .btn-wrap{
+    display: flex;
+    justify-content: center;
+  }
+
+  .add-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+      margin-left: 20px;
+      font-size: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .meal-plan-carousel {
+      position: absolute;
+      .cards-container-wrapper {
+        padding: 15% 0;
+      }
+  
+      .cards-container {
+        padding-left: calc(50% - 90px); /* Adjust for half the width of an active card */
+        padding-right: calc(50% - 90px); /* Adjust for half the width of an active card */
+  
+        .card,
+        .add-card {
+          width: 140px; /* Adjusted for better centering on smaller screens */
+          margin: 0 1rem;
+  
+          &.active {
+            width: 180px; /* Adjusted for better centering on smaller screens */
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .meal-plan-carousel {
+      position: absolute;
+      .cards-container-wrapper {
+        padding: 10% 0;
+        height: 100%;
+      }
+  
+      .cards-container {
+  
+        .card,
+        .add-card {
+          margin: 0 0.2rem;
+  
+          &.active {
+            width: 140px; /* Adjusted for better centering on smaller screens */
+          }
+        }
+      }
+    }
+  }
+
+  .first-card{
+    margin-left: 200px;
+  }
+
+// modal
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  z-index: 1001;
+  width: 80%;
+  height: 80%;
+  overflow-y: auto;
+}
+
+.selected-recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  .selected-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .custom-text,
+    .recipe-card {
+      display: flex;
+      align-items: center;
+
+      button {
+        margin-left: 10px;
+        background: none;
+        border: none;
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.recipe-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .checkbox {
+    margin-right: 10px;
+  }
+}
+
+
+.placeholder {
+  height: 50px;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.set-name-container{
+  display: flex;
+  justify-content: center;
+  .set-name-wrapper{
+    width: 300px;
+  }
+}
+
+
+.mpn{
+  outline: 2px solid;
+  margin-top: 20px;
+  text-align: center;
+  background: lightgray;
+  border-radius: 5px;
+}

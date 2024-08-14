@@ -1,0 +1,125 @@
+@import './variables.scss';
+
+.galleryContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-block-end: 20%;
+  overflow-x: hidden;
+}
+
+.imagwrapper{
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.imagesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 35px;
+  gap: 10px;
+  max-width: 350px;
+  min-width: 300px;
+}
+
+.imageRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.imageContainer {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+
+.imageContainer.selected {
+  border: 2px solid orange;
+  scale: 1.2;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selectedImageBox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectedImageCard {
+  max-width: 180px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.selectedImage {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: rgb(224, 224, 224);
+  margin-top: 30px;
+}
+
+.imageDescription {
+  margin-top: 20px;
+  font-family: $primaryFont;
+  font-size: 14px;
+  color: #555;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .galleryContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .imagesContainer {
+    margin-right: 0;
+  }
+
+  .imageRow {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .selectedImageBox {
+    margin-bottom: 20px;
+  }
+
+  .selectedImageCard {
+    width: 90%;
+    max-width: 180px;
+  }
+}

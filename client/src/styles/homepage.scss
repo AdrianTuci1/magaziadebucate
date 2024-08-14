@@ -1,0 +1,160 @@
+@use './responsive.scss' as media;
+@import './variables.scss';
+
+.pagina{
+    display: flex;
+    flex-direction: column;
+}
+
+.sectiune_1{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: $textWhite;
+    font-family: $primaryFont;
+    background: #243210;
+    @include media.tablet{
+        height: auto;
+        flex-direction: column;
+    }
+}
+
+.buttons{
+    display: flex;
+    .btn{
+        width: 170px;
+        margin: 30px 0px;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
+        box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
+        cursor: pointer;
+        outline: 1px solid;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.1s ease-in-out;
+        margin-right: 30px;
+        &:active{
+            transform: scale(0.98) translate(3px, 3px);
+            -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+        }
+        &:hover{
+            scale: 1.03;
+        }
+    }
+
+    .btn-primary{
+        background-color: rgb(220, 121, 0);
+    }
+
+}
+
+.strong{
+    color: $darkOrange;
+}
+
+.text_big{
+    font-size: 40px;
+}
+
+.stanga{
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    @include media.tablet{
+        width: 90%;
+    }
+
+    h1{
+        line-height: 1;
+    }
+
+    h2{
+        margin-top: 5px;
+        font-weight: 300;
+        line-height: 0.95;
+    }
+
+    p{
+        margin-top: 10px;
+        opacity: 100%;
+        color: rgb(209, 209, 209);
+        line-height: 1.1;
+        font-weight: 100;
+    }
+    
+}
+
+.dreapta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20vh;
+}
+
+.img01{
+    width: 170px;
+    rotate: 10deg;
+    outline: 3px solid whitesmoke;
+}
+
+.img02{
+    width: 230px;
+    rotate: -10deg;
+    outline: 3px solid whitesmoke;
+    transform: translateY(-10%);
+}
+
+.sectiune_2{
+    display: flex;
+    overflow: hidden;
+}
+
+
+.pluses{
+    background:
+    conic-gradient(at 10% 50%,#0000 75%,#243210 0),
+    conic-gradient(at 10% 50%,#0000 75%,#243210 0) calc(1*33px) calc(3*33px),
+    conic-gradient(at 10% 50%,#0000 75%,#243210 0) calc(2*33px) calc(1*33px),
+    conic-gradient(at 10% 50%,#0000 75%,#243210 0) calc(3*33px) calc(4*33px),
+    conic-gradient(at 10% 50%,#0000 75%,#243210 0) calc(4*33px) calc(2*33px),
+    conic-gradient(at 50% 10%,#0000 75%,#243210 0) 0 calc(4*33px),
+    conic-gradient(at 50% 10%,#0000 75%,#243210 0) calc(1*33px) calc(2*33px),
+    conic-gradient(at 50% 10%,#0000 75%,#243210 0) calc(2*33px) 0,
+    conic-gradient(at 50% 10%,#0000 75%,#243210 0) calc(3*33px) calc(3*33px),
+    conic-gradient(at 50% 10%,#0000 75%,#243210 0) calc(4*33px) calc(1*33px),
+    #dc7900;
+    background-size: 160px 165px;
+
+    height: 95px;
+}
+
+.sectiune_3{
+    background-color: #243210;
+}
+
+.grat-wr{
+    padding-block-start: 20%;
+    padding-block-end: 30%;
+    text-align: center;
+    color: whitesmoke;
+    font-family: $primaryFont;
+    h1{
+        margin-bottom: 10px;
+        font-size: 48px;
+    }
+    span{
+        font-weight: 100;
+        font-size: 20px;
+    }
+}
+
+
+.footeri{
+    background-color: rgb(220, 121, 0);
+    display: flex;
+    flex-wrap: wrap;
+}

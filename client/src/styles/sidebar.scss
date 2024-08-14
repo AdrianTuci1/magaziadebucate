@@ -1,0 +1,27 @@
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    background-color: orange;
+    height: auto;
+}
+
+.form-filter{
+    margin: 20px 10px;
+    width: 270px;
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200px;
+    .box_01{
+        width: 30px;
+    }
+}
+
+.categorie{
+    display: flex;
+    flex-direction: column;
+}

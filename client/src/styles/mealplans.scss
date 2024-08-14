@@ -1,0 +1,108 @@
+@import './variables.scss';
+
+.mealplans-table-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $primaryFont;
+  
+    h1 {
+      padding-inline: 30px;
+      padding-block: 30px;
+    }
+  
+    .add-mealplan-button {
+      width: 200px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 20px;
+      transition-duration: 0.4s;
+      border-radius: 4px;
+  
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  
+    .mealplans-table {
+      width: 90%;
+      border-collapse: collapse;
+      margin-top: 20px;
+  
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f4f4f4;
+      }
+  
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+  
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+  
+      .view-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        border-radius: 4px;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-block: 50px;
+  
+      .add-mealplan-button {
+        width: 200px;
+        font-size: 14px;
+        padding: 8px;
+      }
+  
+      .mealplans-table {
+        th, td {
+          font-size: 14px;
+          padding: 6px;
+        }
+  
+        .view-button {
+          font-size: 12px;
+          padding: 4px 8px;
+        }
+      }
+    }
+  }
+
+
+.vezi{
+  margin: 50px;
+}
+
+  

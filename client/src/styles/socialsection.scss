@@ -1,0 +1,51 @@
+/* styles/socialsection.scss */
+.social-section {
+    width: 90%;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .social-views,
+  .social-comments,
+  .social-likes {
+    margin-bottom: 10px;
+  }
+  
+  .comment-section {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .comment-section textarea {
+    width: 90%;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .comment-section button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .social-likes{
+    margin: 10px;
+    display: flex;
+    padding: 5px;
+    background-color: gray;
+    width: 70px;
+    border-radius: 5px;
+    .iconz{
+      width: 50px;
+    }
+  }
+
+  .del-btn{
+    max-width: 60px;
+  }

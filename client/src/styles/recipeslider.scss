@@ -1,0 +1,71 @@
+@import './variables.scss';
+
+.recipe-slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #dc7900;
+  padding-block-end: 70px;
+
+  .slider-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    flex-direction: row;
+    padding: 20px;
+
+    &::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+
+    .recipe-card-con {
+      min-width: 250px;
+      margin-right: 10px;
+      padding: 20px;
+    }
+  }
+
+  .prev-button,
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .prev-button {
+    left: 10px;
+  }
+
+  .next-button {
+    right: 10px;
+  }
+}
+
+.popular{
+  display: flex;
+}
+
+
+.popular-sec{
+  padding: 30px;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  font-family: $primaryFont;
+  font-size: 28px;
+}

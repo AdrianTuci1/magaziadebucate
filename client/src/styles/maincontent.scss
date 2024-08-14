@@ -1,0 +1,235 @@
+.recipes-page {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.left-column {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #f4f4f4;
+
+  .filters-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    label {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .toggle-filters-btn {
+    display: none;
+    margin-top: 20px;
+  }
+}
+
+.right-column {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .info-section {
+    margin-bottom: 20px;
+    overflow: hidden;
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .active-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+
+      .filter-box {
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        background-color: #ddd;
+        border-radius: 5px;
+
+        button {
+          margin-left: 10px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      cursor: pointer;
+      text-decoration: none;
+      border: #007bff;
+    }
+
+    select {
+      margin-top: 10px;
+    }
+  }
+
+  .outline-container{
+    display: flex;
+    width: 100%;
+  }
+
+
+  .card-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); // Create as many columns as possible
+    gap: 40px;
+    padding: 30px;
+  }
+
+  .list-view{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-left: 8px;
+  }
+
+}
+
+@media (max-width: 888px) {
+  .recipes-page {
+    flex-direction: column;
+  }
+
+  .left-column {
+    display: none;
+  }
+
+  .right-column {
+    width: 100%;
+
+    .toggle-filters-btn {
+      display: block;
+    }
+  }
+}
+
+
+//filter list
+
+.ule{
+  list-style-type: none;
+  padding: 0;
+  .type-item{
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: #aaa8a8; // Optional: Add a hover effect
+    }
+
+    &.selected {
+      background-color: #007bff;
+      color: #fff;
+    }
+  }
+}
+
+.filters-container{
+  gap: 25px;
+}
+
+.align-items{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.type-ava{
+  padding: 20px;
+}
+
+.filter-section{
+  padding: 20px;
+}
+
+.filter-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+}
+
+.sort-by{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 170px;
+  margin-left: 20px;
+  justify-content: center;
+  .sort-select{
+    width: 130px;
+  }
+}
+
+.bar-section{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(225, 225, 225);
+  gap: 20px;
+  .afisaza{
+    border-radius: 10px;
+    display: flex;
+    max-width: 50px;
+  }
+  .btn-cardtype{
+    width: 40px;
+  }
+}
+
+
+
+
+.sort-label {
+  width: 50px;
+}
+
+.sort-select {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.toggle-filters-btn{
+  margin-left: 20px;
+  width: 120px;
+}
+
+.load-more{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 50px ;
+  .maimult{
+    width: 300px;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+
+@media (max-width:400px) {
+  .sort-label{
+    display: none;
+  }
+  .filtr-txt{
+    display: none;
+  }
+}

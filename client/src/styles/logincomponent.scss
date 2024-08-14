@@ -1,0 +1,92 @@
+.login-modal {
+    background-color: rgb(1, 31, 4);
+    max-width: 270px;
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 30px;
+    right: 0px;
+    top: 0;
+    z-index: 999;
+    flex-direction: column;
+    color: white;
+  
+    .close-btn {
+      transform: translateX(40%);
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: 0.1s ease-in;
+      &:hover{
+        transform: translateX(40%) rotate(180deg);
+      }
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+  
+      input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+    }
+  
+    .btn {
+      &.btn-primary {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+        &:disabled {
+          background-color: #5a6268;
+        }
+      }
+    }
+  
+    .error-text {
+      color: red;
+      margin-top: 10px;
+    }
+  
+    .additional-links {
+      margin-top: 10px;
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+  
+        &.forgot-password {
+          display: block;
+          margin-bottom: 5px;
+        }
+  
+        &.create-account {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .login-modal{
+        min-width: 86%;
+        min-height: 100%;
+    }
+  }
+  
